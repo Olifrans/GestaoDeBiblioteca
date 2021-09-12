@@ -14,19 +14,20 @@ namespace ControleEmprestimo.Data.Models
         [Key]
         [Column("id")]
         public int Id { get; set; }
-        public int? LceidLivro { get; set; }
-        public int? LceidCliente { get; set; }
-        [Column(TypeName = "datetime")]
-        public DateTime? LcedataEmpretimo { get; set; }
-        [Column(TypeName = "datetime")]
-        public DateTime? LcedataEntrega { get; set; }
-        public bool? LceEntregue { get; set; }
+        [Column("idLivro")]
+        public int IdLivro { get; set; }
+        [Column("idCliente")]
+        public int IdCliente { get; set; }
+        [Column("dataEmpretimo", TypeName = "datetime")]
+        public DateTime DataEmpretimo { get; set; }
+        [Column("dataDevolucao", TypeName = "datetime")]
+        public DateTime DataDevolucao { get; set; }
 
-        [ForeignKey(nameof(LceidCliente))]
+        [ForeignKey(nameof(IdCliente))]
         [InverseProperty(nameof(Cliente.LivroClienteEmprestimo))]
-        public virtual Cliente LceidClienteNavigation { get; set; }
-        [ForeignKey(nameof(LceidLivro))]
+        public virtual Cliente IdClienteNavigation { get; set; }
+        [ForeignKey(nameof(IdLivro))]
         [InverseProperty(nameof(Livro.LivroClienteEmprestimo))]
-        public virtual Livro LceidLivroNavigation { get; set; }
+        public virtual Livro IdLivroNavigation { get; set; }
     }
 }

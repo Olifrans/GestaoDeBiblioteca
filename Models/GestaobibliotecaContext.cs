@@ -37,14 +37,16 @@ namespace ControleEmprestimo.Data.Models
 
             modelBuilder.Entity<LivroClienteEmprestimo>(entity =>
             {
-                entity.HasOne(d => d.LceidClienteNavigation)
+                entity.HasOne(d => d.IdClienteNavigation)
                     .WithMany(p => p.LivroClienteEmprestimo)
-                    .HasForeignKey(d => d.LceidCliente)
+                    .HasForeignKey(d => d.IdCliente)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_LivroClienteEmprestimo_Cliente");
 
-                entity.HasOne(d => d.LceidLivroNavigation)
+                entity.HasOne(d => d.IdLivroNavigation)
                     .WithMany(p => p.LivroClienteEmprestimo)
-                    .HasForeignKey(d => d.LceidLivro)
+                    .HasForeignKey(d => d.IdLivro)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_LivroClienteEmprestimo_Livro");
             });
 

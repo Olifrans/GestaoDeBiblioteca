@@ -9,9 +9,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ControleEmprestimo.Data.Models
 {
-    public partial class Livro
+    public partial class Cliente
     {
-        public Livro()
+        public Cliente()
         {
             LivroClienteEmprestimo = new HashSet<LivroClienteEmprestimo>();
         }
@@ -20,24 +20,23 @@ namespace ControleEmprestimo.Data.Models
         [Column("id")]
         public int Id { get; set; }
         [Required]
-        [Column("livroNome")]
-        [StringLength(100)]
-        public string LivroNome { get; set; }
-        [Required]
-        [Column("livroAutor")]
-        [StringLength(100)]
-        public string LivroAutor { get; set; }
-        [Required]
-        [Column("livroEditora")]
-        [StringLength(150)]
-        public string LivroEditora { get; set; }
-        [Column("livroAnoPublicacao", TypeName = "datetime")]
-        public DateTime LivroAnoPublicacao { get; set; }
-        [Column("livroEdicao")]
+        [Column("cpf")]
         [StringLength(50)]
-        public string LivroEdicao { get; set; }
+        public string Cpf { get; set; }
+        [Required]
+        [Column("nome")]
+        [StringLength(100)]
+        public string Nome { get; set; }
+        [Required]
+        [Column("cidade")]
+        [StringLength(150)]
+        public string Cidade { get; set; }
+        [Required]
+        [Column("bairro")]
+        [StringLength(150)]
+        public string Bairro { get; set; }
 
-        [InverseProperty("LceidLivroNavigation")]
+        [InverseProperty("IdClienteNavigation")]
         public virtual ICollection<LivroClienteEmprestimo> LivroClienteEmprestimo { get; set; }
     }
 }

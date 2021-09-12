@@ -20,23 +20,37 @@ namespace ControleEmprestimo.Data.Models
         [Column("id")]
         public int Id { get; set; }
         [Required]
-        [Column("cpf")]
+        [Column("cliCPF")]
         [StringLength(50)]
-        public string Cpf { get; set; }
+        public string CliCpf { get; set; }
         [Required]
-        [Column("nome")]
+        [Column("cliNome")]
         [StringLength(100)]
-        public string Nome { get; set; }
+        public string CliNome { get; set; }
         [Required]
-        [Column("cidade")]
+        [Column("cliCidade")]
         [StringLength(150)]
-        public string Cidade { get; set; }
+        public string CliCidade { get; set; }
         [Required]
-        [Column("bairro")]
+        [Column("cliBairro")]
         [StringLength(150)]
-        public string Bairro { get; set; }
+        public string CliBairro { get; set; }
+        [Required]
+        [Column("cliEndereco")]
+        [StringLength(250)]
+        public string CliEndereco { get; set; }
+        [Required]
+        [Column("cliNumero")]
+        [StringLength(50)]
+        public string CliNumero { get; set; }
+        [Column("cliTelefoneCelular")]
+        [StringLength(50)]
+        public string CliTelefoneCelular { get; set; }
+        [Column("cliTelefoneFixo")]
+        [StringLength(50)]
+        public string CliTelefoneFixo { get; set; }
 
-        [InverseProperty("IdClienteNavigation")]
+        [InverseProperty("LceidClienteNavigation")]
         public virtual ICollection<LivroClienteEmprestimo> LivroClienteEmprestimo { get; set; }
     }
 }
