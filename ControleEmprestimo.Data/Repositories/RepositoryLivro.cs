@@ -10,5 +10,9 @@ namespace ControleEmprestimo.Data.Repositories
 {
     public class RepositoryLivro : RepositoryBase<Livro>, IRepositoryLivro
     {
+        public RepositoryLivro(bool SaveChanges = true) : base(SaveChanges)
+        {
+                
+        }
     }
 }
