@@ -4,10 +4,10 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Clientes</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a class="btn btn-primary" asp-action="Create">Novo Cliente</a>
 </p>
 <table class="table">
     <thead>
@@ -18,7 +18,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.CliNome)
             </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.CliCidade)
             </th>
             <th>
@@ -29,7 +29,7 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.CliNumero)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.CliTelefoneCelular)
             </th>
@@ -48,7 +48,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.CliNome)
             </td>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.CliCidade)
             </td>
             <td>
@@ -59,17 +59,17 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.CliNumero)
-            </td>
+            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.CliTelefoneCelular)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.CliTelefoneFixo)
             </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            <td class="row">
+                <a asp-action="Edit" class="btn btn-success m-1" asp-route-id="@item.Id">Alterar</a>
+                <a asp-action="Details" class="btn btn-primary m-1" asp-route-id="@item.Id">Detalhes</a>
+                <a asp-action="Delete" class="btn btn-danger m-1" asp-route-id="@item.Id">Excluir</a>
             </td>
         </tr>
 }
