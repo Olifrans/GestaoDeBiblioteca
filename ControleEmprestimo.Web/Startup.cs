@@ -11,6 +11,12 @@ using System.Threading.Tasks;
 
 namespace ControleEmprestimo.Web
 {
+
+    /// <summary>
+    /// Estudando
+    /// 
+    /// </summary>
+
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -51,7 +57,8 @@ namespace ControleEmprestimo.Web
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    //pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Cliente}/{action=Index}/{id?}");
             });
         }
     }

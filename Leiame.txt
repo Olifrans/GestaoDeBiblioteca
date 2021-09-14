@@ -1,0 +1,30 @@
+
+
+Plugin Data Tables
+https://www.datatables.net/
+
+css= //cdn.datatables.net/1.11.1/css/jquery.dataTables.min.css
+
+js= //cdn.datatables.net/1.11.1/js/jquery.dataTables.min.js
+
+https://cdn.datatables.net/plug-ins/1.10.25/i18n/Portuguese-Brasil.json
+
+@section Scripts{ 
+<script>    
+   
+    $(document).ready(function () {
+        $('#myTable').DataTable({
+
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.25/i18n/Portuguese-Brasil.json"
+            }
+        });
+    });
+
+</script>
+}
+
+
+
+Microsoft.VisualStudio.Web.BrowserLink
+
