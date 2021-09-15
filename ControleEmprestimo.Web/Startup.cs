@@ -12,10 +12,7 @@ using System.Threading.Tasks;
 namespace ControleEmprestimo.Web
 {
 
-    /// <summary>
-    /// Estudando
-    /// 
-    /// </summary>
+    
 
     public class Startup
     {
