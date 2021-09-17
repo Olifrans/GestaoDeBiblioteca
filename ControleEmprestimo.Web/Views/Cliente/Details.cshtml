@@ -4,60 +4,107 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h1>Detalhes dos clientes</h1>
 
 <div>
-    <h4>Cliente</h4>
+    <h4>Verifique os detalhes dos cliente</h4>
     <hr />
 
     <div>
-        <a class="btn btn-success" asp-action="Edit" asp-route-id="@Model.Id">Alterar</a>
-        <a  class="btn btn-primary"  asp-action="Index">Voltar</a>
+        <a class="btn btn-danger" asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+        <a class="btn btn-primary" asp-action="Index">Voltar</a>
     </div>
-    <br />
 
     <div class="form-group col-md">
         <label>@Html.DisplayNameFor(model => model.CliCpf)</label>
-        <input disabled class="form-group" value=" @Html.DisplayFor(model => model.CliCpf)" />
+        <input disabled class="form-control" value="@Html.DisplayFor(model => model.CliCpf)" />
     </div>
 
     <div class="form-group col-md">
-        <label> @Html.DisplayNameFor(model => model.CliNome)</label>
-        <input disabled class="form-group" value=" @Html.DisplayFor(model => model.CliNome)" />
+        <label>@Html.DisplayNameFor(model => model.CliNome)</label>
+        <input disabled class="form-control" value=" @Html.DisplayFor(model => model.CliNome)" />
     </div>
 
     <div class="form-group col-md">
-        <label>@Html.DisplayNameFor(model => model.CliCidade)</label>
-        <input disabled class="form-group" value=" @Html.DisplayFor(model => model.CliCidade)" />
+        <label> @Html.DisplayNameFor(model => model.CliCidade)</label>
+        <input disabled class="form-control" value=" @Html.DisplayFor(model => model.CliCidade)" />
     </div>
 
     <div class="form-group col-md">
-        <label> @Html.DisplayNameFor(model => model.CliBairro)</label>
-        <input disabled class="form-group" value=" @Html.DisplayFor(model => model.CliBairro)" />
-    </div>
-
-
-    <div class="form-group col-md">
-        <label>  @Html.DisplayNameFor(model => model.CliEndereco)</label>
-        <input disabled class="form-group" value=" @Html.DisplayFor(model => model.CliEndereco)" />
+        <label>@Html.DisplayNameFor(model => model.CliBairro)</label>
+        <input disabled class="form-control" value="@Html.DisplayFor(model => model.CliBairro)" />
     </div>
 
     <div class="form-group col-md">
-        <label>   @Html.DisplayNameFor(model => model.CliNumero)</label>
-        <input disabled class="form-group" value="  @Html.DisplayFor(model => model.CliNumero)" />
+        <label> @Html.DisplayNameFor(model => model.CliEndereco)</label>
+        <input disabled class="form-control" value="@Html.DisplayFor(model => model.CliEndereco)" />
     </div>
 
+    <div class="form-group col-md">
+        <label> @Html.DisplayNameFor(model => model.CliNumero)</label>
+        <input disabled class="form-control" value=" @Html.DisplayFor(model => model.CliNumero)" />
+    </div>
 
     <div class="form-group col-md">
-        <label>   @Html.DisplayNameFor(model => model.CliTelefoneCelular)</label>
-        <input disabled class="form-group" value=" @Html.DisplayFor(model => model.CliTelefoneCelular)" />
+        <label> @Html.DisplayNameFor(model => model.CliTelefoneCelular)</label>
+        <input disabled class="form-control" value=" @Html.DisplayFor(model => model.CliTelefoneCelular)" />
     </div>
 
 
     <div class="form-group col-md">
         <label> @Html.DisplayNameFor(model => model.CliTelefoneFixo)</label>
-        <input disabled class="form-group" value=" @Html.DisplayFor(model => model.CliTelefoneFixo)" />
+        <input disabled class="form-control" value=" @Html.DisplayFor(model => model.CliTelefoneFixo)" />
     </div>
 
-</div>
 
+
+
+    <!--<dl class="row">-->
+    @*<dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CliNome)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CliNome)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CliCidade)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CliCidade)
+        </dd>*@
+
+
+
+    @*<dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CliBairro)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CliBairro)
+        </dd>*@
+    @*<dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CliEndereco)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CliEndereco)
+        </dd>*@
+    @*<dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CliNumero)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CliNumero)
+        </dd>*@
+    @*<dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.CliTelefoneCelular)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.CliTelefoneCelular)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.CliTelefoneFixo)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.CliTelefoneFixo)
+            </dd>
+        </dl>*@
+</div>

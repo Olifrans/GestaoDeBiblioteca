@@ -42,12 +42,22 @@ namespace ControleEmprestimo.Web.Controllers
         }
 
 
+        [HttpPost]
+        public IActionResult Edit(Cliente model)
+        {
+            Cliente nCliente = nClienteService.nRepositoryCliente.Alterar(model);
+            int id = nCliente.Id;
+            return RedirectToAction("Details", new { id });
+        }
+
+
         public IActionResult Edit(int id)
         {
             Cliente nCliente = nClienteService.nRepositoryCliente.SelecionarPK(id);
             return View(nCliente);
         }
 
-        
+
+
     }
 }
