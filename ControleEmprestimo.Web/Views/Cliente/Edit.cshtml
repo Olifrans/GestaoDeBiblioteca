@@ -5,19 +5,18 @@
 }
 
 <h1>Alterar dados do cliente</h1>
-
 <h4>Altere os dados abaixo</h4>
 <hr />
 
 <div>
     <a class="btn btn-success" asp-action="Index">Voltar</a>
+    <input type="submit" value="Salvar" class="btn btn-primary" />
 </div>
 
 <div class="row">
     <div class="col-md">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
             <div hidden class="form-group col-md">
                 <label asp-for="Id" class="control-label"></label>
                 <input asp-for="Id" class="form-control" />
@@ -34,7 +33,6 @@
                             <span asp-validation-for="CliNome" class="text-danger"></span>
                         </div>
                     </div>
-
                     <div class="col-md">
                         <div class="form-group">
                             <label asp-for="CliCpf" class="control-label"></label>
@@ -44,7 +42,6 @@
                     </div>
                 </div>
             </div>
-
             <br />
 
             <div class="card">
@@ -78,7 +75,6 @@
                     </div>
                 </div>
             </div>
-
             <br />
 
             <div class="card">
@@ -92,7 +88,6 @@
                             <span asp-validation-for="CliTelefoneCelular" class="text-danger"></span>
                         </div>
                     </div>
-
                     <div class="col-md">
                         <div class="form-group">
                             <label asp-for="CliTelefoneFixo" class="control-label"></label>
@@ -102,15 +97,9 @@
                     </div>
                 </div>
             </div>
-
             <br />
-
-
-            <div class="form-group">
-                <input type="submit" value="Salvar" class="btn btn-primary" />
-            </div>
+            
         </form>
-
     </div>
 </div>
 

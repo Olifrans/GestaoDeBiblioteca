@@ -1,78 +1,61 @@
-﻿@model IEnumerable<ControleEmprestimo.Data.Models.Cliente>
+﻿@model IEnumerable<ControleEmprestimo.Data.Models.Livro>
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Clientes</h1>
+<h1>Livros</h1>
 
 <p>
-    <a class="btn btn-primary" asp-action="Create">Novo Cliente</a>
+    <a class="btn btn-primary" asp-action="Create">Novo Livro</a>
 </p>
 <table id="myTable" class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.CliCpf)
+                @Html.DisplayNameFor(model => model.LivroNome)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CliNome)
-            </th>
-            @*<th>
-                @Html.DisplayNameFor(model => model.CliCidade)
+                @Html.DisplayNameFor(model => model.LivroAutor)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CliBairro)
+                @Html.DisplayNameFor(model => model.LivroEditora)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CliEndereco)
+                @Html.DisplayNameFor(model => model.LivroAnoPublicacao)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CliNumero)
-            </th>*@
-            <th>
-                @Html.DisplayNameFor(model => model.CliTelefoneCelular)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CliTelefoneFixo)
+                @Html.DisplayNameFor(model => model.LivroEdicao)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model) {
-
+        @foreach (var item in Model)
+        {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.CliCpf)
+                    @Html.DisplayFor(modelItem => item.LivroNome)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.CliNome)
-                </td>
-                @*<td>
-                    @Html.DisplayFor(modelItem => item.CliCidade)
+                    @Html.DisplayFor(modelItem => item.LivroAutor)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.CliBairro)
+                    @Html.DisplayFor(modelItem => item.LivroEditora)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.CliEndereco)
+                    @Html.DisplayFor(modelItem => item.LivroAnoPublicacao)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.CliNumero)
-                </td>*@
-                <td>
-                    @Html.DisplayFor(modelItem => item.CliTelefoneCelular)
+                    @Html.DisplayFor(modelItem => item.LivroEdicao)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.CliTelefoneFixo)
-                </td>
-                                
-                <td class="row">
-                    <a asp-action="Edit" class="btn btn-success m-1" asp-route-id="@item.Id">Alterar</a>
-                    <a asp-action="Details" class="btn btn-primary m-1" asp-route-id="@item.Id">Detalhes</a>
-                    @*<a asp-action="Delete" class="btn btn-danger m-1" asp-route-id="@item.Id">Excluir</a>*@
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    @*<a asp-action="Delete" asp-route-id="@item.Id">Delete</a>*@
 
+
+                    @*<a asp-action="Delete" class="btn btn-danger m-1" asp-route-id="@item.Id">Excluir</a>*@
                     <!-- !!!!!!!!!!!!!!!Modal não funciona ver o java script -->
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-danger m-1" data-bs-toggle="modal" data-bs-target="#DeleteModal-@item.Id">
@@ -90,7 +73,7 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    Deseja realmente excluir o cliente @item.CliNome?
+                                    Deseja realmente excluir o cliente @item.LivroNome?
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
@@ -99,17 +82,13 @@
                             </div>
                         </div>
                     </div>
-
-
                 </td>
             </tr>
         }
     </tbody>
 </table>
 
-
-
-@section Scripts{ 
+@section Scripts{
     <script>
 
         $(document).ready(function () {

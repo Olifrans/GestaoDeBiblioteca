@@ -8,53 +8,54 @@ using System.Threading.Tasks;
 
 namespace ControleEmprestimo.Web.Controllers
 {
-    public class ClienteController : Controller
+    public class LivroController : Controller
     {
-        private ClienteService nClienteService = new ClienteService();
+        private LivroService nLivroService = new LivroService();        
         public IActionResult Index()
         {
-            List<Cliente> nListService = nClienteService.nRepositoryCliente.SelecionarTodos();
+            List<Livro> nListService = nLivroService.nRepositoryLivro.SelecionarTodos();
             return View(nListService);
         }
 
-        public IActionResult Create()        {
+        public IActionResult Create()
+        {
             return View();
         }
 
         [HttpPost]
-        public IActionResult Create(Cliente model)
+        public IActionResult Create(Livro model)
         {
             if (ModelState.IsValid)
             {
                 //return View();
             }
-            nClienteService.nRepositoryCliente.Incluir(model);
+            nLivroService.nRepositoryLivro.Incluir(model);
             return RedirectToAction("Index");
         }
 
         public IActionResult Details(int id)
         {
-            Cliente nCliente = nClienteService.nRepositoryCliente.SelecionarPK(id);
-            return View(nCliente);
+            Livro nLrivro = nLivroService.nRepositoryLivro.SelecionarPK(id);
+            return View(nLrivro);
         }
 
         [HttpPost]
-        public IActionResult Edit(Cliente model)
+        public IActionResult Edit(Livro model)
         {
-            Cliente nCliente = nClienteService.nRepositoryCliente.Alterar(model);
-            int id = nCliente.Id;
+            Livro nLrivro = nLivroService.nRepositoryLivro.Alterar(model);
+            int id = nLrivro.Id;
             return RedirectToAction("Details", new { id });
         }
 
         public IActionResult Edit(int id)
         {
-            Cliente nCliente = nClienteService.nRepositoryCliente.SelecionarPK(id);
-            return View(nCliente);
+            Livro nLrivro = nLivroService.nRepositoryLivro.SelecionarPK(id);
+            return View(nLrivro);
         }
 
         public IActionResult Delete(int id)
         {
-            nClienteService.nRepositoryCliente.Excluir(id);
+            nLivroService.nRepositoryLivro.Excluir(id);
             return RedirectToAction("Index");
         }
     }

@@ -5,7 +5,6 @@
 }
 
 <h1>Cadatrar Novo Cliente</h1>
-
 <h4>Preencha os campos abaixo para incluir um novo usuário</h4>
 <hr />
 
@@ -15,7 +14,7 @@
 <br />
 
 <div class="row">
-    <div class="col-md">
+    <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="card">
@@ -28,7 +27,6 @@
                             <span asp-validation-for="CliNome" class="text-danger"></span>
                         </div>
                     </div>
-
                     <div class="col-md">
                         <div class="form-group">
                             <label asp-for="CliCpf" class="control-label"></label>
@@ -38,7 +36,6 @@
                     </div>
                 </div>
             </div>
-
             <br />
 
             <div class="card">
@@ -71,7 +68,6 @@
                     </div>
                 </div>
             </div>
-
             <br />
 
             <div class="card">
@@ -84,7 +80,6 @@
                             <span asp-validation-for="CliTelefoneCelular" class="text-danger"></span>
                         </div>
                     </div>
-
                     <div class="col-md">
                         <div class="form-group">
                             <label asp-for="CliTelefoneFixo" class="control-label"></label>
@@ -94,7 +89,6 @@
                     </div>
                 </div>
             </div>
-
             <br />
 
             <div class="form-group">

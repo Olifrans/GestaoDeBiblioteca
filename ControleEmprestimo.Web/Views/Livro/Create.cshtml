@@ -1,0 +1,122 @@
+﻿@model ControleEmprestimo.Data.Models.Livro
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Livro</h4>
+<hr />
+
+<div>
+    <a class="btn btn-primary" asp-action="Index">Voltar</a>
+</div>
+<br />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="card">
+                <div class="card-header">Informações dos Livros</div>
+                <div class="card-body row">
+                    @*colaca um formulario na frente do outro*@
+                    <div class="col-md">
+                        <div class="form-group">
+                            <label asp-for="LivroNome" class="control-label"></label>
+                            <input asp-for="LivroNome" class="form-control" />
+                            <span asp-validation-for="LivroNome" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="form-group">
+                            <label asp-for="LivroAutor" class="control-label"></label>
+                            <input asp-for="LivroAutor" class="form-control" />
+                            <span asp-validation-for="LivroAutor" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+
+            <div class="card">
+                <div class="card-header">Informações do Livro</div>
+                <div class="card-body row">
+                    @*colaca um formulario na frente do outro*@
+                    <div class="col-md">
+                        <div class="form-group">
+                            <label asp-for="LivroEditora" class="control-label"></label>
+                            <input asp-for="LivroEditora" class="form-control" />
+                            <span asp-validation-for="LivroEditora" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="form-group">
+                            <label asp-for="LivroAnoPublicacao" class="control-label"></label>
+                            <input asp-for="LivroAnoPublicacao" class="form-control" />
+                            <span asp-validation-for="LivroAnoPublicacao" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+
+            <div class="card">
+                <div class="card-header">Edção</div>
+                <div class="card-body row">
+                    @*colaca um formulario na frente do outro*@
+                    <div class="col-md">
+                        <div class="form-group">
+                            <label asp-for="LivroEdicao" class="control-label"></label>
+                            <input asp-for="LivroEdicao" class="form-control" />
+                            <span asp-validation-for="LivroEdicao" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+
+            <div class="form-group">
+                <input type="submit" value="Incluir" class="btn btn-success" />
+            </div>
+
+
+            @*<form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="LivroNome" class="control-label"></label>
+                    <input asp-for="LivroNome" class="form-control" />
+                    <span asp-validation-for="LivroNome" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="LivroAutor" class="control-label"></label>
+                    <input asp-for="LivroAutor" class="form-control" />
+                    <span asp-validation-for="LivroAutor" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="LivroEditora" class="control-label"></label>
+                    <input asp-for="LivroEditora" class="form-control" />
+                    <span asp-validation-for="LivroEditora" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="LivroAnoPublicacao" class="control-label"></label>
+                    <input asp-for="LivroAnoPublicacao" class="form-control" />
+                    <span asp-validation-for="LivroAnoPublicacao" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="LivroEdicao" class="control-label"></label>
+                    <input asp-for="LivroEdicao" class="form-control" />
+                    <span asp-validation-for="LivroEdicao" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>*@
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
