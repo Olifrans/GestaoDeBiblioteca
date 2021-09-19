@@ -5,9 +5,37 @@ As
 select Cli.cliNome, Liv.livroNome, LCE.* from LivroClienteEmprestimo LCE
 inner join Cliente Cli on Cli.id = LCE.LceidCliente
 inner join Livro Liv on liv.id = LCE.LceidLivro
-
-
 select * from Lista_Livro_Clientes_Emprestimo
+
+
+
+
+
+
+Create View Listar_LivroClienteEmprestimo
+As
+select Cl.cliNome, Li.livroNome, LCE.* from LivroClienteEmprestimo LCE
+inner join Cliente Cl on Cl.id = LCE.LceidCliente
+inner join Livro Li on li.id = LCE.LceidLivro
+
+select * from Listar_LivroClienteEmprestimo
+
+--Create View Lista_Livro_Clientes_Emprestimo
+--As
+--select Cli.cliNome, Liv.livroNome, LCE.* from Livro_Cliente_Emprestimo LCE
+--inner join Cliente Cli on Cli.id = LCE.LceidCliente
+--inner join Livro Liv on liv.id = LCE.LceidLivro
+--select * from Lista_Livro_Clientes_Emprestimo
+
+
+
+Alter View Listar_LivroClienteEmprestimo
+As
+select Cl.cliCPF, Cl.cliNome, Li.livroNome, LCE.* from LivroClienteEmprestimo LCE
+inner join Cliente Cl on Cl.id = LCE.LceidCliente
+inner join Livro Li on li.id = LCE.LceidLivro
+
+select * from Listar_LivroClienteEmprestimo
 
 
 

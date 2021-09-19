@@ -11,6 +11,10 @@ using System.Threading.Tasks;
 
 namespace ControleEmprestimo.Web
 {    
+    /// <summary>
+    /// 
+    /// </summary>
+
     public class Startup
     {
         public Startup(IConfiguration configuration)

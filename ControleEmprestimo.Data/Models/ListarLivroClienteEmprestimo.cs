@@ -10,8 +10,12 @@ using Microsoft.EntityFrameworkCore;
 namespace ControleEmprestimo.Data.Models
 {
     [Keyless]
-    public partial class ListaLivroClientesEmprestimo
+    public partial class ListarLivroClienteEmprestimo
     {
+        [Required]
+        [Column("cliCPF")]
+        [StringLength(50)]
+        public string CliCpf { get; set; }
         [Required]
         [Column("cliNome")]
         [StringLength(100)]
@@ -25,7 +29,7 @@ namespace ControleEmprestimo.Data.Models
         public int? LceidLivro { get; set; }
         public int? LceidCliente { get; set; }
         [Column(TypeName = "datetime")]
-        public DateTime? LcedataEmpretimo { get; set; }
+        public DateTime? LcedataEmprestimo { get; set; }
         [Column(TypeName = "datetime")]
         public DateTime? LcedataEntrega { get; set; }
         public bool? LceEntregue { get; set; }

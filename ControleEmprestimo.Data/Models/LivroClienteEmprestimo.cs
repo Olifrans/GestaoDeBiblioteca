@@ -17,7 +17,7 @@ namespace ControleEmprestimo.Data.Models
         public int? LceidLivro { get; set; }
         public int? LceidCliente { get; set; }
         [Column(TypeName = "datetime")]
-        public DateTime? LcedataEmpretimo { get; set; }
+        public DateTime? LcedataEmprestimo { get; set; }
         [Column(TypeName = "datetime")]
         public DateTime? LcedataEntrega { get; set; }
         public bool? LceEntregue { get; set; }
