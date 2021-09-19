@@ -4,14 +4,13 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Detalhes dos livros</h1>
+<h1 align="center">Detalhes dos livros</h1>
 <div>
-    <h4>Verifique os detalhes dos livros</h4>
+    <h3>Verifique os detalhes dos livros</h3>
     <hr />
-
     <div>
-        <a class="btn btn-danger" asp-action="Edit" asp-route-id="@Model.Id">Alterar</a>
-        <a class="btn btn-primary" asp-action="Index">Voltar</a>
+        <a class="btn btn-primary" asp-action="Index">Voltar a Livros</a>
+        <a class="btn btn-danger" asp-action="Edit" asp-route-id="@Model.Id">Alterar Detalhes do Livro</a>
     </div>
 
     <div class="row">
@@ -25,7 +24,7 @@
 
 
                 <div class="card">
-                    <div class="card-header">Informações dos Livros</div>
+                    <div align="center" style="position:center; font-style:normal;font-size:26px; background-color:aliceblue;" class="card-header"><h4>INFORMAÇÕES DOS LIVROS</h4></div>
                     <div class="card-body row">
                         @*colaca um formulario na frente do outro*@
                         <div class="col-md">
@@ -44,7 +43,9 @@
                 </div>
                 <br />
 
+
                 <div class="card">
+                    <div align="center" style="position:center; font-style:normal;font-size:26px; background-color:aliceblue;" class="card-header"><h4>INFORMAÇÕES TÉCNICAS LIVROS</h4></div>
                     <div class="card-body row">
                         @*colaca um formulario na frente do outro*@
                         <div class="col-md">
@@ -52,29 +53,39 @@
                                 <label> @Html.DisplayNameFor(model => model.LivroEditora)</label>
                                 <input disabled class="form-control" value="  @Html.DisplayFor(model => model.LivroEditora)" />
                             </div>
-
+                        </div>
+                        <div class="col-md">
                             <div class="form-group">
                                 <label> @Html.DisplayNameFor(model => model.LivroAnoPublicacao)</label>
                                 <input disabled class="form-control" value=" @Html.DisplayFor(model => model.LivroAnoPublicacao)" />
                             </div>
                         </div>
+
+                    </div>
+
+
+
+                    <div class="col-md">
+                        <div class="form-group">
+                            <label>  @Html.DisplayNameFor(model => model.LivroEdicao)</label>
+                            <input disabled class="form-control" value="   @Html.DisplayFor(model => model.LivroEdicao)" />
+                        </div>
                     </div>
                 </div>
                 <br />
 
-                <div class="card">
-                    <div class="card-header">Edção</div>
-                    <div class="card-body row">
+                <!--<div class="card">
+                    <div style="position:center; font-style:normal;font-size:26px; background-color:aliceblue;" class="card-header"><h4>EDÇÃO</h4></div>
+                    <div class="card-body row">-->
                         @*colaca um formulario na frente do outro*@
-                        <div class="col-md">
+                        <!--<div class="col-md">
                             <div class="form-group">
                                 <label>  @Html.DisplayNameFor(model => model.LivroEdicao)</label>
                                 <input disabled class="form-control" value="   @Html.DisplayFor(model => model.LivroEdicao)" />
                             </div>
                         </div>
                     </div>
-                </div>
-                <br />
+                </div>-->
             </form>
         </div>
     </div>

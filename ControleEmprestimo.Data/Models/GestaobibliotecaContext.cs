@@ -19,6 +19,7 @@ namespace ControleEmprestimo.Data.Models
         }
 
         public virtual DbSet<Cliente> Cliente { get; set; }
+        public virtual DbSet<ListaLivroClientesEmprestimo> ListaLivroClientesEmprestimo { get; set; }
         public virtual DbSet<Livro> Livro { get; set; }
         public virtual DbSet<LivroClienteEmprestimo> LivroClienteEmprestimo { get; set; }
 
@@ -34,6 +35,11 @@ namespace ControleEmprestimo.Data.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
+
+            modelBuilder.Entity<ListaLivroClientesEmprestimo>(entity =>
+            {
+                entity.ToView("Lista_Livro_Clientes_Emprestimo");
+            });
 
             modelBuilder.Entity<LivroClienteEmprestimo>(entity =>
             {

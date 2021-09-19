@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Clientes</h1>
+<h1 align="center">Lista de Clientes</h1>
 
 <p>
     <a class="btn btn-primary" asp-action="Create">Novo Cliente</a>
@@ -13,23 +13,25 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.CliCpf)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.CliNome)
             </th>
-            @*<th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.CliCpf)
+            </th>
+
+                @*<th>
                 @Html.DisplayNameFor(model => model.CliCidade)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CliBairro)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CliEndereco)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CliNumero)
-            </th>*@
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CliBairro)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CliEndereco)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CliNumero)
+                </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.CliTelefoneCelular)
             </th>
@@ -43,12 +45,14 @@
         @foreach (var item in Model) {
 
             <tr>
+                 <td>
+                    @Html.DisplayFor(modelItem => item.CliNome)
+                </td>
+
                 <td>
                     @Html.DisplayFor(modelItem => item.CliCpf)
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CliNome)
-                </td>
+               
                 @*<td>
                     @Html.DisplayFor(modelItem => item.CliCidade)
                 </td>
@@ -71,16 +75,15 @@
                 <td class="row">
                     <a asp-action="Edit" class="btn btn-success m-1" asp-route-id="@item.Id">Alterar</a>
                     <a asp-action="Details" class="btn btn-primary m-1" asp-route-id="@item.Id">Detalhes</a>
-                    @*<a asp-action="Delete" class="btn btn-danger m-1" asp-route-id="@item.Id">Excluir</a>*@
-
+                    <a asp-action="Delete" class="btn btn-danger m-1" asp-route-id="@item.Id">Excluir</a>
+                                        
                     <!-- !!!!!!!!!!!!!!!Modal não funciona ver o java script -->
                     <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-danger m-1" data-bs-toggle="modal" data-bs-target="#DeleteModal-@item.Id">
+                    <!--<button type="button" class="btn btn-danger m-1" data-bs-toggle="modal" data-bs-target="#DeleteModal-@item.Id">
                         Excluir
-                    </button>
-
+                    </button>-->
                     <!-- Modal -->
-                    <div class="modal fade" id="DeleteModal-@item.Id" tabindex="-1" role="dialog" aria-labelledby="DeleteModalLabel" aria-hidden="true">
+                    <!--<div class="modal fade" id="DeleteModal-@item.Id" tabindex="-1" role="dialog" aria-labelledby="DeleteModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -98,15 +101,13 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-
+                    </div>-->
 
                 </td>
             </tr>
-        }
+         }
     </tbody>
 </table>
-
 
 
 @section Scripts{ 
@@ -121,12 +122,12 @@
             });
         });
 
-        /* < !-- !!!!!!!!!!!!!!!Modal não funciona ver o java script-- >*/
-        var myModal = document.getElementById('DeleteModal-')
-        var myInput = document.getElementById('myInput')
-        myModal.addEventListener('shown.bs.modal', function () {
-            myInput.focus()
-        });
+        ///* < !-- !!!!!!!!!!!!!!!Modal não funciona ver o java script-- >*/
+        //var myModal = document.getElementById('DeleteModal-')
+        //var myInput = document.getElementById('myInput')
+        //myModal.addEventListener('shown.bs.modal', function () {
+        //    myInput.focus()
+        //});
 
     </script>
 }

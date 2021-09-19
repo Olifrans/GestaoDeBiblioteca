@@ -4,13 +4,13 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Alterar dados do cliente</h1>
+<h1 align="center">Alterar dados do cliente</h1>
 <h4>Altere os dados abaixo</h4>
 <hr />
 
 <div>
     <a class="btn btn-success" asp-action="Index">Voltar</a>
-    <input type="submit" value="Salvar" class="btn btn-primary" />
+    @*<input type="submit" value="Salvar" class="btn btn-primary" />*@
 </div>
 
 <div class="row">
@@ -23,7 +23,7 @@
             </div>
 
             <div class="card">
-                <div class="card-header">Dados Pessoais</div>
+                <div align="center" class="card-header">Dados Pessoais</div>
                 <div class="card-body row">
                     @*colaca um formulario na frente do outro*@
                     <div class="col-md">
@@ -45,7 +45,7 @@
             <br />
 
             <div class="card">
-                <div class="card-header">Endereço</div>
+                <div align="center" class="card-header">Endereço</div>
                 <div class="card-body row">
                     @*colaca um formulario na frente do outro*@
                     <div class="col-md">
@@ -78,7 +78,7 @@
             <br />
 
             <div class="card">
-                <div class="card-header">Contatos Pessoais</div>
+                <div align="center" class="card-header">Contatos Pessoais</div>
                 <div class="card-body row">
                     @*colaca um formulario na frente do outro*@
                     <div class="col-md">
@@ -98,7 +98,11 @@
                 </div>
             </div>
             <br />
-            
+
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-success" />
+            </div>
+
         </form>
     </div>
 </div>

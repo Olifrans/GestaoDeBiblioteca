@@ -24,6 +24,10 @@
       {
          "Name": "[dbo].[LivroClienteEmprestimo]",
          "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Lista_Livro_Clientes_Emprestimo]",
+         "ObjectType": 3
       }
    ],
    "UiHint": "(LocalDB)\\MSSQLLocalDB.GestaoBiblioteca",

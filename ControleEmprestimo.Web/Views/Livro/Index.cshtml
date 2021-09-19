@@ -4,11 +4,9 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Livros</h1>
+<h1 align="center">Lista de Livros</h1>
+<p><a class="btn btn-primary" asp-action="Create">Cadastrar Novo Livro</a></p>
 
-<p>
-    <a class="btn btn-primary" asp-action="Create">Novo Livro</a>
-</p>
 <table id="myTable" class="table">
     <thead>
         <tr>
@@ -50,20 +48,18 @@
                     @Html.DisplayFor(modelItem => item.LivroEdicao)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    @*<a asp-action="Delete" asp-route-id="@item.Id">Delete</a>*@
-
-
-                    @*<a asp-action="Delete" class="btn btn-danger m-1" asp-route-id="@item.Id">Excluir</a>*@
+                    <a asp-action="Edit" class="btn btn-success m-1" asp-route-id="@item.Id">Alterar</a>
+                    <a asp-action="Details" class="btn btn-primary m-1" asp-route-id="@item.Id">Detalhes</a>
+                    <a asp-action="Delete"  class="btn btn-danger m-1" asp-route-id="@item.Id">Delete</a>
+                                     
+                   
                     <!-- !!!!!!!!!!!!!!!Modal não funciona ver o java script -->
                     <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-danger m-1" data-bs-toggle="modal" data-bs-target="#DeleteModal-@item.Id">
+                    <!--<button type="button" class="btn btn-danger m-1" data-bs-toggle="modal" data-bs-target="#DeleteModal-@item.Id">
                         Excluir
-                    </button>
-
+                    </button>-->
                     <!-- Modal -->
-                    <div class="modal fade" id="DeleteModal-@item.Id" tabindex="-1" role="dialog" aria-labelledby="DeleteModalLabel" aria-hidden="true">
+                    <!--<div class="modal fade" id="DeleteModal-@item.Id" tabindex="-1" role="dialog" aria-labelledby="DeleteModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -81,7 +77,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
+
+
                 </td>
             </tr>
         }
@@ -100,12 +98,12 @@
             });
         });
 
-        /* < !-- !!!!!!!!!!!!!!!Modal não funciona ver o java script-- >*/
-        var myModal = document.getElementById('DeleteModal-')
-        var myInput = document.getElementById('myInput')
-        myModal.addEventListener('shown.bs.modal', function () {
-            myInput.focus()
-        });
+        ///* < !-- !!!!!!!!!!!!!!!Modal não funciona ver o java script-- >*/
+        //var myModal = document.getElementById('DeleteModal-')
+        //var myInput = document.getElementById('myInput')
+        //myModal.addEventListener('shown.bs.modal', function () {
+        //    myInput.focus()
+        //});
 
     </script>
 }
