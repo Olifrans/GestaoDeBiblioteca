@@ -1,18 +1,16 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace ControleEmprestimo.Web
 {
-    
 
+    /// <summary>
+    /// Estudou o video 13 --> proximo video é o video 14
+    /// </summary>
+    /// 
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -52,8 +50,8 @@ namespace ControleEmprestimo.Web
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
-                    //pattern: "{controller=Cliente}/{action=Index}/{id?}");
+                    //pattern: "{controller=Home}/{action=Index}/{id?}");
+                   pattern: "{controller=Emprestimo}/{action=Index}/{id?}");
             });
         }
     }
