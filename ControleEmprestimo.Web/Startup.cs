@@ -10,10 +10,8 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace ControleEmprestimo.Web
-{    
-    /// <summary>
-    /// 
-    /// </summary>
+{
+    
 
     public class Startup
     {
