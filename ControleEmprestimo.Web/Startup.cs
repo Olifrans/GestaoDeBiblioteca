@@ -5,12 +5,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
 namespace ControleEmprestimo.Web
-{
+{    
 
-    /// <summary>
-    /// Estudou o video 13 --> proximo video é o video 14
-    /// </summary>
-    /// 
     public class Startup
     {
         public Startup(IConfiguration configuration)
