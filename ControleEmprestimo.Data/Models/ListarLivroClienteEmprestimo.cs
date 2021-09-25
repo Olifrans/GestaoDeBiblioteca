@@ -14,23 +14,30 @@ namespace ControleEmprestimo.Data.Models
         [Required]
         [Column("cliCPF")]
         [StringLength(50)]
+        [Display(Name = "CPF")]
         public string CliCpf { get; set; }
         [Required]
         [Column("cliNome")]
         [StringLength(100)]
+        [Display(Name = "Cliente")]
         public string CliNome { get; set; }
         [Required]
         [Column("livroNome")]
         [StringLength(100)]
+        [Display(Name ="Livro")]
         public string LivroNome { get; set; }
         [Column("id")]
         public int Id { get; set; }
         public int? LceidLivro { get; set; }
         public int? LceidCliente { get; set; }
         [Column(TypeName = "datetime")]
+        [Display(Name = "Data de Empréstimo")]
         public DateTime? LcedataEmprestimo { get; set; }
         [Column(TypeName = "datetime")]
+        [Display(Name = "Data de Entrega")]
         public DateTime? LcedataEntrega { get; set; }
+        [Display(Name = "Entregue")]
         public bool? LceEntregue { get; set; }
+
     }
 }

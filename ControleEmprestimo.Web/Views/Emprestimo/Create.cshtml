@@ -1,12 +1,14 @@
 ﻿@*@model ControleEmprestimo.Data.Models.LivroClienteEmprestimo*@
 @model EmprestimoViewModel
 
-<h4>Lista de Livros Emprestados</h4>
+<h1 align="center">Lista de Livros Emprestados</h1>
 <hr />
 
-<div>
+<div class="form-group">
+    <input type="submit" value="Create" class="btn btn-primary" />
     <a class="btn btn-primary" asp-action="Index">Voltar</a>
 </div>
+
 <br />
 
 <div class="row">
@@ -21,10 +23,8 @@
                 <input asp-for="idLivro" class="form-control" />
             </div>
 
-
             <div class="card">
                 <div align="center" style="position:center; font-style:normal;font-size:26px; background-color:aliceblue;" class="card-header"><h4>Clientes</h4></div>
-                @*<div class="card-header">Cliente</div>*@
                 <div class="card-body">
                     <table id="ListeClienteTable" class="table">
                         <thead>
@@ -69,11 +69,10 @@
                     </table>
                 </div>
             </div>
-
+            <br />
 
             <div class="card">
                 <div align="center" style="position:center; font-style:normal;font-size:26px; background-color:aliceblue;" class="card-header"><h4>Livros</h4></div>
-                @*<div class="card-header">Livros</div>*@
                 <div class="card-body">
                     <table id="ListeLivroTable" class="table">
                         <thead>
@@ -120,12 +119,10 @@
                     </table>
                 </div>
             </div>
-
             <br />
 
             <div class="card">
                 <div align="center" style="position:center; font-style:normal;font-size:26px; background-color:aliceblue;" class="card-header"><h4>DATAS</h4></div>
-                @*<div class="card-header">Datas</div>*@
                 <div class="card-body row">
                     <div class="col-md">
                         <div class="form-group">
@@ -143,9 +140,6 @@
                     </div>
                 </div>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
         </form>
     </div>
 </div>
@@ -154,23 +148,58 @@
     <script>
 
         $(document).ready(function () {
-            $('#ListeClienteTable').DataTable({
+            var ListeClienteTable = $('#ListeClienteTable').DataTable({
 
                 "language": {
                     "url": "//cdn.datatables.net/plug-ins/1.10.25/i18n/Portuguese-Brasil.json"
                 }
             });
-        });
 
-        $(document).ready(function () {
-            $('#ListeLivroTable').DataTable({
+            var ListeLivroTable = $('#ListeLivroTable').DataTable({
 
                 "language": {
                     "url": "//cdn.datatables.net/plug-ins/1.10.25/i18n/Portuguese-Brasil.json"
                 }
             });
+
+            //Tabela Cliente
+            $('#ListeClienteTable tbody').on('click', 'tr', function () {
+                if ($(this).hasClass('selected')) {
+                    $(this).removeClass('selected');
+                }
+                else {
+                    ListeClienteTable.$('tr.selected').removeClass('selected');
+                    $(this).addClass('selected');
+                }
+            });
+            //$('#ListeClienteTable').click(function () {
+            //    ListeClienteTable.row('.selected').remove().draw(false);
+            //});
+
+
+            //Tabela Livro
+            $('#ListeLivroTable tbody').on('click', 'tr', function () {
+                if ($(this).hasClass('selected')) {
+                    $(this).removeClass('selected');
+                }
+                else {
+                    ListeLivroTable.$('tr.selected').removeClass('selected');
+                    $(this).addClass('selected');
+                }
+            });
+            //$('#ListeLivroTable').click(function () {
+            //    ListeLivroTable.row('.selected').remove().draw(false);
+            //});
+
         });
     </script>
 }
+
+
+
+
+
+
+
 
 

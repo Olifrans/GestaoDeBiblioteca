@@ -18,22 +18,32 @@ namespace ControleEmprestimo.Data.Models
         [Key]
         [Column("id")]
         public int Id { get; set; }
+
         [Required]
         [Column("livroNome")]
         [StringLength(100)]
+        [Display(Name = "Nome")]
         public string LivroNome { get; set; }
+
         [Required]
         [Column("livroAutor")]
         [StringLength(100)]
+        [Display(Name = "Autor")]
         public string LivroAutor { get; set; }
+
         [Required]
         [Column("livroEditora")]
         [StringLength(150)]
+        [Display(Name = "Editora")]
         public string LivroEditora { get; set; }
+
         [Column("livroAnoPublicacao", TypeName = "datetime")]
+        [Display(Name = "Ano Publicação")]
         public DateTime LivroAnoPublicacao { get; set; }
+
         [Column("livroEdicao")]
         [StringLength(50)]
+        [Display(Name = "Edição")]
         public string LivroEdicao { get; set; }
 
         [InverseProperty("LceidLivroNavigation")]
