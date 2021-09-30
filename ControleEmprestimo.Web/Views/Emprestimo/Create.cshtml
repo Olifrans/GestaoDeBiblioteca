@@ -17,10 +17,10 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
             <div hidden class="form-group">
-                <input asp-for="idCliente" class="form-control" />
+                <input id="idCliente" asp-for="idCliente" class="form-control" />
             </div>
             <div hidden class="form-group">
-                <input asp-for="idLivro" class="form-control" />
+                <input id="idCliente" asp-for="idLivro" class="form-control" />
             </div>
 
             <div class="card">
@@ -30,11 +30,11 @@
                         <thead>
                             <tr>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.nCliente.CliNome)
+                                    @Html.DisplayNameFor(model => model.nCliente.CliCpf)
                                 </th>
 
                                 <th>
-                                    @Html.DisplayNameFor(model => model.nCliente.CliCpf)
+                                    @Html.DisplayNameFor(model => model.nCliente.CliNome)
                                 </th>
 
                                 <th>
@@ -48,22 +48,22 @@
                         <tbody>
                             @foreach (var item in Model.nListCliente)
                             {
-                                <tr>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.CliNome)
-                                    </td>
+                            <tr onclick="passidCliente('@item.Id')">  @*Verificar se é aspar simples ou aspa dupla*@
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CliCpf)
+                                </td>
 
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.CliCpf)
-                                    </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CliNome)
+                                </td>
 
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.CliTelefoneCelular)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.CliTelefoneFixo)
-                                    </td>
-                                </tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CliTelefoneCelular)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CliTelefoneFixo)
+                                </td>
+                            </tr>
                             }
                         </tbody>
                     </table>
@@ -97,7 +97,7 @@
                         <tbody>
                             @foreach (var item in Model.nListLivro)
                             {
-                                <tr>
+                                <tr onclick="passidLivro('@item.Id')">
                                     <td>
                                         @Html.DisplayFor(modelItem => item.LivroNome)
                                     </td>
@@ -127,7 +127,7 @@
                     <div class="col-md">
                         <div class="form-group">
                             <label asp-for="dataEmprestimo" class="control-label"></label>
-                            <input asp-for="dataEmprestimo" class="form-control" />
+                            <input readonly asp-for="dataEmprestimo" class="form-control" />
                             <span asp-validation-for="dataEmprestimo" class="text-danger"></span>
                         </div>
                     </div>
@@ -178,7 +178,7 @@
 
 
             //Tabela Livro
-            $('#ListeLivroTable tbody').on('click', 'tr', function () {
+            var ListeLivroTable = $('#ListeLivroTable tbody').on('click', 'tr', function () {
                 if ($(this).hasClass('selected')) {
                     $(this).removeClass('selected');
                 }
@@ -190,8 +190,20 @@
             //$('#ListeLivroTable').click(function () {
             //    ListeLivroTable.row('.selected').remove().draw(false);
             //});
-
         });
+
+
+        function passidCliente(idCliente) {
+            console.log(idCliente);
+        }
+
+
+        function passidLivro(idLivro) {
+            console.log(idLivro);
+        }
+
+        
+
     </script>
 }
 

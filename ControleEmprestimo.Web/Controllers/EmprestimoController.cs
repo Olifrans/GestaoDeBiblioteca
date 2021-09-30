@@ -27,6 +27,9 @@ namespace ControleEmprestimo.Web.Controllers
             nEmprestimoViewModel.nListCliente = nListCliente;
             nEmprestimoViewModel.nListLivro = nListLivro;
 
+            nEmprestimoViewModel.dataEmprestimo = DateTime.Now; //seta data atual
+            nEmprestimoViewModel.dataEntrega = DateTime.Now.AddDays(7); //determina
+
             return View(nEmprestimoViewModel);
         }
 
