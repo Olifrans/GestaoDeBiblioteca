@@ -28,29 +28,28 @@ namespace ControleEmprestimo.Web.Controllers
             nEmprestimoViewModel.nListLivro = nListLivro;
 
             nEmprestimoViewModel.dataEmprestimo = DateTime.Now; //seta data atual
-            nEmprestimoViewModel.dataEntrega = DateTime.Now.AddDays(7); //determina
+            nEmprestimoViewModel.dataEntrega = DateTime.Now.AddDays(7); //determina a quantidade de dias
 
             return View(nEmprestimoViewModel);
         }
 
         [HttpPost]
-        public IActionResult Create(ListarLivroClienteEmprestimo model)
+        public IActionResult Create(EmprestimoViewModel nEmprestimoViewModel)
         {
-            if (ModelState.IsValid)
+            LivroClienteEmprestimo nLivroClienteEmprestimo = new LivroClienteEmprestimo();
+            nLivroClienteEmprestimo.LcedataEmprestimo = nLivroClienteEmprestimo.LcedataEmprestimo;
+            nLivroClienteEmprestimo.LcedataEntrega = nLivroClienteEmprestimo.LcedataEntrega;
+            nLivroClienteEmprestimo.LceEntregue = false;
+            nLivroClienteEmprestimo.LceidCliente = nLivroClienteEmprestimo.LceidCliente;
+            nLivroClienteEmprestimo.LceidLivro = nLivroClienteEmprestimo.LceidLivro;
+
+            if (!ModelState.IsValid)
             {
-                //return View();
+                return View();
             }
-            _listartimoService.nRepositoryListarLivroClienteEmprestimo.Incluir(model);
+            _listartimoService.nRepositoryLivroClienteEmprestimo.Incluir(nLivroClienteEmprestimo);
             return RedirectToAction("Index");
         }
-
-
-
-
-
-
-
-
 
 
 

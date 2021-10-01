@@ -20,7 +20,7 @@
                 <input id="idCliente" asp-for="idCliente" class="form-control" />
             </div>
             <div hidden class="form-group">
-                <input id="idCliente" asp-for="idLivro" class="form-control" />
+                <input id="idLivro" asp-for="idLivro" class="form-control" />
             </div>
 
             <div class="card">
@@ -162,6 +162,8 @@
                 }
             });
 
+
+
             //Tabela Cliente
             $('#ListeClienteTable tbody').on('click', 'tr', function () {
                 if ($(this).hasClass('selected')) {
@@ -172,9 +174,7 @@
                     $(this).addClass('selected');
                 }
             });
-            //$('#ListeClienteTable').click(function () {
-            //    ListeClienteTable.row('.selected').remove().draw(false);
-            //});
+
 
 
             //Tabela Livro
@@ -187,22 +187,21 @@
                     $(this).addClass('selected');
                 }
             });
-            //$('#ListeLivroTable').click(function () {
-            //    ListeLivroTable.row('.selected').remove().draw(false);
-            //});
         });
 
 
+
+
         function passidCliente(idCliente) {
+            document.getElementById('idCliente').value = idCliente;
             console.log(idCliente);
         }
 
 
         function passidLivro(idLivro) {
+            document.getElementById('idLivro').value = idLivro;
             console.log(idLivro);
-        }
-
-        
+        }       
 
     </script>
 }

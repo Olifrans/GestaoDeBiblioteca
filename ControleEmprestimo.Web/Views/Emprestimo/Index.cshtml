@@ -58,7 +58,19 @@
                 @Html.DisplayFor(modelItem => item.LcedataEmprestimo)
             </td>
 
-            <td>
+            <td class="bg-warning">
+                @{
+                    var styleStatus = "text-white bg-sucess";
+                    if (DateTime.Now.Date > item.LcedataEntrega)
+                    {
+                        styleStatus = "text-white bg-danger";
+                    }
+                    else if(DateTime.Now.Date.Equals(item.LcedataEntrega))
+                    {
+                        styleStatus = "bg-warning";
+                    }
+                 }
+
                 @Html.DisplayFor(modelItem => item.LcedataEntrega)
             </td>
 
